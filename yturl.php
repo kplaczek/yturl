@@ -50,7 +50,7 @@ class yturl {
     }
 
     private function isIdValid($ytVideoId) {
-        if (strlen($ytVideoId) !== 11 || !preg_match('#[a-zA-Z0-9\-]{11}#', $ytVideoId)) {
+        if (strlen($ytVideoId) !== 11 || !preg_match('#[a-zA-Z0-9\-_]{11}#', $ytVideoId)) {
             throw new Exception('Wrong youtube video id.');
         }
         return true;
