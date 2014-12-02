@@ -9,7 +9,7 @@
 class yturl {
 
     private $ytVideoId = null;
-    private $filesData = [];
+    private $filesData = array();
 
     const get_video_info_url = 'http://youtube.com/get_video_info?video_id=';
 
