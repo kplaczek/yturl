@@ -11,7 +11,11 @@
             $yturl = new yturl($_POST['vid']);
             $streams = $yturl->getInfo();
             foreach ($streams as $stream) {
-                echo '<div><video controls><source src="' . $stream['url'] . '"></video></div>';
+                if (strpos($stream['type'], ';'))
+                    list($type, $codec) = explode(';', $stream['type']);
+                else
+                    $type = $stream['type'];
+                echo '<div><video controls><source type="' . $type . '" src="' . $stream['url'] . '"></video></div>';
             }
         }
         ?>
